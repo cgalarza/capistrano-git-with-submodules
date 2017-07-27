@@ -20,7 +20,7 @@ class Capistrano::SCM::Git::WithSubmodules < Capistrano::Plugin
           on release_roles :all do
             with fetch(:git_environmental_variables).merge(
                 'GIT_DIR' => repo_path.to_s,
-                'GIT_WORK_TREE' => release_path.to_s,
+                # 'GIT_WORK_TREE' => release_path.to_s,
                 'GIT_INDEX_FILE' => temp_index_file_path.to_s
             ) do
               within release_path do
